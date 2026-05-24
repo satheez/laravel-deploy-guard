@@ -29,6 +29,19 @@ final class FailedJobsCheck implements DeploymentCheck
 
     public function run(): CheckResult
     {
+        $driver = (string) config('queue.failed.driver', 'database-uuids');
+
+        if (! in_array($driver, ['database', 'database-uuids'], true)) {
+            return CheckResult::skipped(
+                checkKey: $this->key(),
+                category: $this->category(),
+                title: $this->description(),
+                message: 'Failed jobs storage is not database-backed.',
+                suggestion: 'Verify failed job storage manually before deployment if workers are used.',
+                details: ['driver' => $driver],
+            );
+        }
+
         $table = (string) config('queue.failed.table', 'failed_jobs');
         $database = config('queue.failed.database');
 

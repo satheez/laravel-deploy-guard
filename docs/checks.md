@@ -29,7 +29,7 @@ Each check returns `pass`, `warning`, `fail`, or `skipped`.
 | Check | Purpose |
 |---|---|
 | `queue.connection` | Warns when production uses `sync` unless allowed |
-| `queue.failed_jobs` | Reports existing failed jobs when storage is queryable |
+| `queue.failed_jobs` | Reports existing failed jobs when database-backed storage is queryable |
 
 ## Cache
 

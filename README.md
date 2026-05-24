@@ -1,8 +1,8 @@
+# Laravel Deploy Guard
 <p align="center">
     <img src="docs/assets/banner.png" alt="Laravel Deploy Guard" width="100%">
 </p>
 
-# Laravel Deploy Guard
 
 <p align="center">
     <a href="https://github.com/satheez/laravel-deploy-guard/actions/workflows/tests.yaml"><img src="https://github.com/satheez/laravel-deploy-guard/actions/workflows/tests.yaml/badge.svg" alt="Tests"></a>
@@ -29,8 +29,8 @@ It does not deploy your application, run migrations, change environment files, o
 - [Troubleshooting](docs/troubleshooting.md)
 - [FAQ](docs/faq.md)
 - [Security policy](SECURITY.md)
-- [Contribution guide](CONTRIBUTING.md)
-- [Change log](CHANGE_LOG.md)
+- [Contribution guide](CONTRIBUTE.md)
+- [Change log](CHANGELOG.md)
 
 ## Installation
 
