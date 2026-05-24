@@ -19,6 +19,17 @@ All notable changes to this package are documented here.
 - Pint, Rector, Larastan, and GitHub Actions workflow.
 - User documentation under `docs/`.
 
+### Changed
+
+- GitHub Actions now verifies the declared Laravel 10, 11, and 12 support matrix across PHP 8.2, 8.3, and 8.4.
+- The failed jobs check now skips non-database failed job drivers explicitly.
+- The Rector development dependency now allows the Laravel 10 compatible major version.
+
+### Fixed
+
+- Invalid `APP_KEY` values now fail the environment check instead of passing on presence alone.
+- README documentation links now point to existing repository files.
+
 ### Security
 
 - Secret-safe output policy documented and covered by tests.

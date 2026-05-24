@@ -26,7 +26,7 @@ The package uses Laravel migration APIs. If the migration repository cannot be q
 
 ## Failed jobs are skipped
 
-The failed jobs check skips when storage is unavailable or the configured table does not exist. Create the failed jobs table if the application stores failed jobs in the database.
+The failed jobs check skips when storage is unavailable, the configured table does not exist, or `queue.failed.driver` is not `database` or `database-uuids`. Create the failed jobs table if this application stores failed jobs in the database.
 
 ## Scheduler validation is a warning
 

@@ -37,8 +37,17 @@ it('checks required environment values', function (): void {
 
     expect((new AppKeySetCheck)->run()->status->value)->toBe('fail');
 
-    config()->set('app.key', 'base64:present');
+    config()->set('app.key', 'base64:'.base64_encode(str_repeat('a', 32)));
     expect((new AppKeySetCheck)->run()->status->value)->toBe('pass');
+});
+
+it('fails when application key format is invalid', function (): void {
+    config()->set('app.key', 'not-a-valid-application-key');
+
+    $result = (new AppKeySetCheck)->run();
+
+    expect($result->status->value)->toBe('fail')
+        ->and($result->message)->toBe('APP_KEY is invalid.');
 });
 
 it('checks debug mode only for production environments', function (): void {
@@ -117,6 +126,15 @@ it('checks failed jobs storage', function (): void {
     ]);
 
     expect((new FailedJobsCheck)->run()->status->value)->toBe('warning');
+});
+
+it('skips failed jobs storage for non database failed job drivers', function (): void {
+    config()->set('queue.failed.driver', 'dynamodb');
+
+    $result = (new FailedJobsCheck)->run();
+
+    expect($result->status->value)->toBe('skipped')
+        ->and($result->message)->toBe('Failed jobs storage is not database-backed.');
 });
 
 it('checks cache readiness', function (): void {
