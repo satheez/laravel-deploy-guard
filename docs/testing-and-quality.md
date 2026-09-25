@@ -46,4 +46,4 @@ Larastan checks the package source, config, and tests.
 
 ## GitHub Actions
 
-The workflow at `.github/workflows/tests.yaml` runs Composer validation, Pest, Pint, Rector dry-run, and Larastan.
+The workflow at `.github/workflows/tests.yaml` runs Composer validation, Pest, Pint, Rector dry-run, and Larastan across Laravel 12 (PHP 8.2, 8.3, and 8.4) and Laravel 13 (PHP 8.3 and 8.4).
