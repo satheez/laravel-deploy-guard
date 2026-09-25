@@ -32,6 +32,13 @@ It does not deploy your application, run migrations, change environment files, o
 - [Contribution guide](CONTRIBUTE.md)
 - [Change log](CHANGELOG.md)
 
+## Requirements
+
+- PHP 8.2 or newer
+- Laravel 12 or 13
+
+Laravel 13 requires PHP 8.3 or newer. Laravel 10 and 11 are outside Laravel's security support window, and current Composer releases block those framework versions because of security advisories.
+
 ## Installation
 
 Install the package as a development dependency:

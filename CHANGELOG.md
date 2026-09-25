@@ -6,6 +6,7 @@ All notable changes to this package are documented here.
 
 ### Added
 
+- Laravel 13 support for PHP 8.3 and 8.4, using Orchestra Testbench 11.
 - Laravel package scaffold with Composer auto-discovery.
 - `deploy:guard` Artisan command.
 - Human-readable and JSON reports.
@@ -21,9 +22,13 @@ All notable changes to this package are documented here.
 
 ### Changed
 
-- GitHub Actions now verifies the declared Laravel 10, 11, and 12 support matrix across PHP 8.2, 8.3, and 8.4.
+- GitHub Actions now verifies Laravel 12 on PHP 8.2, 8.3, and 8.4, and Laravel 13 on PHP 8.3 and 8.4.
 - The failed jobs check now skips non-database failed job drivers explicitly.
 - The Rector development dependency now allows the Laravel 10 compatible major version.
+
+### Removed
+
+- Laravel 10 and 11 support. Both lines are outside Laravel's security support window, and current Composer releases refuse to install them because every 10.x and 11.x version is affected by security advisories.
 
 ### Fixed
 
