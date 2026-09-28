@@ -6,7 +6,7 @@ All notable changes to this package are documented here.
 
 ### Added
 
-- Laravel 13 support for PHP 8.3 and 8.4, using Orchestra Testbench 11.
+- Laravel 13 support for PHP 8.3, 8.4, and 8.5, using Orchestra Testbench 11.
 - Laravel package scaffold with Composer auto-discovery.
 - `deploy:guard` Artisan command.
 - Human-readable and JSON reports.
@@ -22,7 +22,8 @@ All notable changes to this package are documented here.
 
 ### Changed
 
-- GitHub Actions now verifies Laravel 12 on PHP 8.2, 8.3, and 8.4, and Laravel 13 on PHP 8.3 and 8.4.
+- GitHub Actions now verifies Laravel 12 on PHP 8.2, 8.3, 8.4, and 8.5, and Laravel 13 on PHP 8.3, 8.4, and 8.5.
+- GitHub Actions checks out the repository with `actions/checkout` v7.
 - The failed jobs check now skips non-database failed job drivers explicitly.
 - The Rector development dependency now allows the Laravel 10 compatible major version.
 
